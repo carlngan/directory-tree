@@ -64,7 +64,7 @@ export class PoolManager {
 
 const p = new PoolManager()
 try {
-  const connection = p.getConnection()
+  const connection = await p.getConnection()
 } catch (e) {
   console.log(e)
 }
