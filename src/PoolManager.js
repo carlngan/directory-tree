@@ -38,6 +38,8 @@ export class PoolManager {
     return null
   }
 
+  // tries to get a connection, if we fail the first time, we will retry every second for 30 seconds.
+  // if there is no connection at the end of 30 seconds, throw a timeout error.
   async getConnection(timeout = 30000) {
     let ac = this.getAvailableConnection()
     if (ac) {
